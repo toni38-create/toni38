@@ -1,0 +1,155 @@
+    // Choix du sujet lettres et philosophie
+    document.getElementById('imageNietzsche').addEventListener('click', function() {
+
+    // Masque les trois sujets de quiz 
+    document.getElementById('imagecontainer').style.display = 'none';
+
+    // Fait apparaitre les questions 
+    document.getElementById('quiz1').style.display = 'block';
+});
+
+    // Choix du sujet sciences
+    document.getElementById('imageEinstein').addEventListener('click', function() {
+
+    // Masque les trois sujets de quiz 
+    document.getElementById('imagecontainer').style.display = 'none';
+
+    // Fait apparaitre les questions 
+    document.getElementById('quiz2').style.display = 'block';
+});
+
+    // Choix du sujet histoire
+    document.getElementById('imageNapoleon').addEventListener('click', function() {
+
+    // Masque les trois sujets de quiz 
+    document.getElementById('imagecontainer').style.display = 'none';
+
+    // Fait apparaitre les questions 
+    document.getElementById('quiz3').style.display = 'block';
+});
+
+
+
+
+let currentQuestionIndex = 0;
+let currentQuiz = "quiz1"; // Commence avec le premier quiz
+
+const questions = {
+    quiz1: [
+        {
+            question: "Quel philosophe a écrit 'Ainsi parlait Zarathoustra'?",
+            answers: ["Friedrich Nietzsche", "Platon", "Descartes", "Socrate"],
+            correct: 0
+        },
+        {
+            question: "Qui a écrit 'Tourne la page'?",
+            answers: ["Alexandre Dumas", "Squeezie", "Victor Hugo", "Michel Drucker"],
+            correct: 1
+        },
+        {
+            question: "Qui a écrit 'L'enfer, c'est les autres'?",
+            answers: ["Michel Cymes", "Althusser", "Jean-Paul Sartre", "Simone de Beauvoir"],
+            correct: 2
+        },
+        {
+            question: "D'après toi, grosse merde inculte, qui a écrit le CLASSIQUE 'La Promesse de l'aube'?",
+            answers: ["Philippe Etchebest", "Gustave Flaubert", "Honoré de Balzac", "Romain Gary"],
+            correct: 3
+        },
+        {
+            question: "Où est né le philosophe Albert Camus ?",
+            answers: ["En Algérie", "Au Japon", "A Tourcoing", "A Villeurbanne à deux minutes du Transbo"],
+            correct: 0
+        },
+        {
+            question: "Qui a écrit 'Si les meilleurs partent en premier, pourquoi suis-je toujours en vie ?'?",
+            answers: ["Paul Valéry", "Marcel Proust", "Booba", "Michel Drucker"],
+            correct: 2
+        },
+        {
+            question: "Place aux femmes un peu, petit misogyne ! Quel livre a écrit Christine de Pizan ?",
+            answers: ["Le tueur aveugle", "La Cité des Dames", "L'étranger", "Je suis trop sexiste pour le savoir"],
+            correct: 1
+        },
+        {
+            question: "Qui a écrit 'La beauté est dans les yeux de celui qui regarde'?",
+            answers: ["Cyril Hanouna", "Oscar Wilde", "Victor Hugo", "Kev Adams"],
+            correct: 1
+        },
+        {
+            question: "Par quoi commence le livre 'A la recherche du temps perdu'?",
+            answers: ["Longtemps, je me suis couché de bonne heure", "J’suis capable du meilleur, comme du pire Et c’est dans l’pire que j’suis le meilleur", "Appelons la femme un bel animal sans fourrure dont la peau est très recherchée.", "Quand je pense à tous les livres qu'il me reste à lire, j'ai la certitude d'être encore heureux."],
+            correct: 0
+        },
+    ],
+};
+
+// Fonction pour afficher le quiz choisi
+function afficherQuiz(quizId) {
+    // Masquer les trois sujets de quiz 
+    document.getElementById('imagecontainer').style.display = 'none';
+
+    // Afficher le quiz choisi
+    document.getElementById(quizId).style.display = 'block';
+    currentQuiz = quizId; // Mettre à jour le quiz courant
+    currentQuestionIndex = 0; // Réinitialiser l'index de la question
+    afficherQuestion(currentQuiz, currentQuestionIndex); // Afficher la première question
+}
+
+function afficherQuestion(quizId, questionIndex) {
+    const questionObj = questions[quizId][questionIndex];
+    
+    // Cibler les éléments spécifiques pour chaque quiz
+    let questionElement;
+    if (quizId === 'quiz1') {
+        questionElement = document.getElementById('questionphilo');
+    } else if (quizId === 'quiz2') {
+        questionElement = document.getElementById('questionsciences');
+    } else if (quizId === 'quiz3') {
+        questionElement = document.getElementById('questionhistoire');
+    }
+
+    const buttons = document.querySelectorAll(`#${quizId} .bouton`);
+
+    // Mettre à jour le texte de la question
+    questionElement.innerText = questionObj.question;
+
+    // Mettre à jour les textes des boutons
+    buttons.forEach((button, index) => {
+        button.innerText = questionObj.answers[index];
+        button.onclick = function() {
+            verifierReponse(quizId, questionIndex, index);
+        };
+    });
+}
+
+function verifierReponse(quizId, questionIndex, answerIndex) {
+    const correctAnswer = questions[quizId][questionIndex].correct;
+
+    if (answerIndex === correctAnswer) {
+        alert("Bonne réponse !");
+    } else {
+        alert("Mauvaise réponse ! Allez ça dégage !");
+    }
+
+    // Passe à la question suivante si disponible
+    if (questionIndex + 1 < questions[quizId].length) {
+        currentQuestionIndex++;
+        afficherQuestion(quizId, currentQuestionIndex);
+    } else {
+        alert(`Quiz ${quizId} terminé !`);
+
+        // Masquer le quiz actuel
+        document.getElementById(quizId).style.display = 'none';
+
+        // Afficher l'écran d'accueil
+        document.getElementById('imagecontainer').style.display = 'block';
+        
+        // Réinitialiser l'index de la question
+        currentQuestionIndex = 0; 
+        currentQuiz = "quiz1"; // Réinitialiser au premier quiz
+    }
+}
+
+// Afficher la première question du premier quiz
+afficherQuestion(currentQuiz, currentQuestionIndex);
