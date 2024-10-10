@@ -1,0 +1,147 @@
+.body {
+    background-color: rgb(120, 120, 240);
+    margin: 0; /* Supprime la marge par défaut */
+}
+
+.bloc {
+    width: 500px;
+    height: 150px;
+    background-color: rgb(183, 121, 212);
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+    margin: auto; /* Centre le bloc horizontalement */
+    margin-top: 40px;
+    display: flex; /* Définit le bloc comme un conteneur flex */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); /* Ombre */
+}
+
+.titre {
+    font-family: Montserrat, sans-serif; /* Ajout de sans-serif comme police de secours */
+    font-size: 3rem;
+    color: white;
+    margin: auto; /* Centre le titre à l'intérieur du bloc */
+    text-align: center;
+}
+
+.image-container {
+    display: flex; /* Utilise Flexbox pour disposer les images horizontalement */
+    justify-content: center; /* Espace les images avec des marges égales */
+    align-items: center; /* Centre verticalement les éléments (images et légendes) */
+    width: 100%; /* Prend toute la largeur disponible */
+    margin: 50px auto; /* Centrer le conteneur avec un espacement vertical */
+}
+
+.image-item {
+    text-align: center; /* Centre les légendes sous les images */
+    width: 30%; /* Chaque image prend 30% de la largeur totale */
+}
+
+.image-Nietzsche {
+    width: 500px; /* Largeur de l'image */
+    height: auto; /* Conserve le rapport d'aspect */
+    cursor: pointer;
+    margin-top: 20px;
+
+}
+
+.image-Nietzsche:hover {
+    transform: scale(0.9); /* Augmente la taille de l'image de 10% lors du survol */
+    cursor: pointer; /* Change le curseur en mode pouce */
+    transition: transform 0.3s ease; /* Transition douce pour le changement de taille */
+}
+
+.image-Einstein {
+        width: 500px; /* Largeur de l'image */
+        height: auto; /* Conserve le rapport d'aspect */
+        cursor: pointer;
+        margin-top: 20px;
+}
+
+.image-Einstein:hover {
+    transform: scale(0.9); /* Augmente la taille de l'image de 10% lors du survol */
+    cursor: pointer; /* Change le curseur en mode pouce */
+    transition: transform 0.3s ease; /* Transition douce pour le changement de taille */
+}
+
+.legende-container {
+    display: flex; /* Utilise Flexbox pour disposer les images horizontalement */
+    justify-content: center; /* Espace les images avec des marges égales */
+    align-items: center; /* Centre verticalement les éléments (images et légendes) */
+    width: 100%; /* Prend toute la largeur disponible */
+    margin: 0.5px auto; /* Centrer le conteneur avec un espacement vertical */
+}
+
+.legendephilo {
+    font-family: Montserrat;
+    font-size: 3rem;
+    color: white;
+    margin-top: 20px;
+}
+
+.legendesciences {
+    font-family: Montserrat;
+    font-size: 3rem;
+    color: white;
+    margin-top: 20px;
+}
+
+.legendehistoire {
+    font-family: Montserrat;
+    font-size: 3rem;
+    color: white;
+    margin-top: 20px;
+}
+
+.image-Napoleon {
+    width: 500px; /* Largeur de l'image */
+    height: auto; /* Conserve le rapport d'aspect */
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.image-Napoleon:hover {
+    transform: scale(0.9); /* Augmente la taille de l'image de 10% lors du survol */
+    cursor: pointer; /* Change le curseur en mode pouce */
+    transition: transform 0.3s ease; /* Transition douce pour le changement de taille */
+}
+
+#quiz1 {
+    display: none; /* Masquer le quiz par défaut */
+    text-align: center;
+}
+
+#quiz2 {
+    display: none; /* Masquer le quiz par défaut */
+    text-align: center;
+}
+
+#quiz3 {
+    display: none; /* Masquer le quiz par défaut */
+    text-align: center;
+}
+
+.bouton {
+    background-color: rgb(243, 84, 84);
+    font-size: 1rem; /* Taille du texte */
+    padding: 15px 80px; /* Espacement interne du bouton */
+    font-family: montserrat;
+    border-radius: 12px; /* Coins arrondis */
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); /* Ombre autour du bouton */
+    flex: 0 1 calc(50% - 20px); /* Chaque bouton prend 50% de la largeur, moins l'espace */
+    margin-top: 200px;
+}   
+
+.bouton:hover {
+    background-color: #f87e7e; /* Couleur au survol (plus foncée) */
+    transform: scale(1.1); /* Augmente légèrement la taille au survol */
+}
+
+.question {
+    margin-top: 200px;
+    font-family: montserrat;
+    color: white;
+    text-align: center; /* Centre le texte */
+}
+
