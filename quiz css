@@ -16,6 +16,10 @@
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); /* Ombre */
 }
 
+.bloc:hover {
+    cursor: pointer;
+}
+
 .titre {
     font-family: Montserrat, sans-serif; /* Ajout de sans-serif comme police de secours */
     font-size: 3rem;
@@ -122,10 +126,10 @@
 }
 
 .bouton {
-    background-color: rgb(243, 84, 84);
-    font-size: 1rem; /* Taille du texte */
+    background-color: rgb(77, 187, 77);
+    font-size: 1.5rem; /* Taille du texte */
     padding: 15px 80px; /* Espacement interne du bouton */
-    font-family: montserrat;
+    font-family: Montserrat; 
     border-radius: 12px; /* Coins arrondis */
     cursor: pointer;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); /* Ombre autour du bouton */
@@ -145,3 +149,17 @@
     text-align: center; /* Centre le texte */
 }
 
+#successMessage, #feedbackMessage {
+    display: none; /* Par défaut, caché */
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#successMessage {
+    color: green;
+}
+
+#feedbackMessage {
+    color: red;
+}
