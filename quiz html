@@ -2,7 +2,7 @@
 <html   lang="en">
     <head>
         <meta charset="UTF-8">
-        <link   rel="stylesheet" href="css.css">
+        <link   rel="stylesheet" href="index.css">
         <title>projet web</title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -65,9 +65,10 @@
 
 <div class="success" id="successMessage" style="display: none;">bravo</div>
 <div class="feedback" id="feedbackMessage" style="display: none;">nul !</div>
+<div class="imagesuccess" id="imagesuccess" style="display: none;"></div>
+<img    src="Tom-Cruise-laugh-meme-1a55a.jpg" class="tom cruise" style="display: none;" id="tomcruiseimage" >
 
-
-<script src="java.js"  defer></script>
+<script src="index.js"  defer></script>
 
 </body>
 </html>
