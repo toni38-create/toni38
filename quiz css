@@ -157,9 +157,15 @@
 }
 
 #successMessage {
-    color: green;
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    font-family: Montserrat;
+    margin-top: 200px;
 }
 
 #feedbackMessage {
-    color: red;
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    font-family: Montserrat;
+    margin-top: 200px;
 }
