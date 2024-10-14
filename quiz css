@@ -20,6 +20,7 @@
     cursor: pointer;
 }
 
+
 .titre {
     font-family: Montserrat, sans-serif; /* Ajout de sans-serif comme police de secours */
     font-size: 3rem;
@@ -29,16 +30,17 @@
 }
 
 .image-container {
-    display: flex; /* Utilise Flexbox pour disposer les images horizontalement */
-    justify-content: center; /* Espace les images avec des marges égales */
-    align-items: center; /* Centre verticalement les éléments (images et légendes) */
-    width: 100%; /* Prend toute la largeur disponible */
-    margin: 50px auto; /* Centrer le conteneur avec un espacement vertical */
+    display: flex;               /* Utiliser Flexbox pour aligner les enfants horizontalement */
+    justify-content: space-around; /* Distribue l'espace entre les éléments */
+    align-items: flex-start;         /* Aligne les éléments verticalement au centre */
+    padding: 20px;              /* Ajoute un peu d'espace autour des images */
+    overflow: hidden;           /* Cache tout débordement */
 }
 
 .image-item {
-    text-align: center; /* Centre les légendes sous les images */
-    width: 30%; /* Chaque image prend 30% de la largeur totale */
+    flex: 1;                    /* Chaque image prend une part égale de l'espace disponible */
+    margin: 0 10px;            /* Marge entre les images */
+    text-align: center;         /* Centrer le texte des légendes sous les images */
 }
 
 .image-Nietzsche {
@@ -168,4 +170,45 @@
     font-size: 2rem;
     font-family: Montserrat;
     margin-top: 200px;
+}
+
+#mauvaiseréponse {
+    margin-left: 660px;
+    margin-top: 40px;
+    width: 600px;
+}
+
+#bonneréponsequiz1 {
+    margin-left: 720px;
+    margin-top: 40px;
+    width: 500px;
+}
+
+#bonneréponsequiz2 {
+    margin-left: 700px;
+    margin-top: 40px;
+    width: 500px;
+}
+#bonneréponsequiz3 {
+    margin-left: 720px;
+    margin-top: 40px;
+    width: 500px;
+}
+
+#mauvaiseréponsequiz1 {
+    margin-left: 720px;
+    margin-top: 40px;
+    width: 500px;
+}
+
+#mauvaiseréponsequiz2 {
+    margin-left: 720px;
+    margin-top: 40px;
+    width: 500px;
+}
+
+#mauvaiseréponsequiz3 {
+    margin-left: 720px;
+    margin-top: 40px;
+    width: 500px;
 }
