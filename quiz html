@@ -16,10 +16,9 @@
 
     <!-- BLOC DES TROIS IMAGES -->
     <div    class="image-container" id="imagecontainer">
-        <figure class="image-item">
+        <figure class="image-item" >
             <img    src="Leonardo_Phoenix_Friedrich_Nietzsche_the_19thcentury_German_ph_1.jpg" class="image-Nietzsche"   id="imageNietzsche" >
             <figcaption class="legendephilo"    id="legendephilo">Lettres et philosophie</figcaption>
-
         </figure>
 
         <figure class="image-item">
@@ -37,16 +36,16 @@
     
      <!-- BLOC DU QUESTIONNAIRE -->
 
-<div    class="quiz-container">
-    <div    id="quiz1">
-        <h1 class="question" id="questionphilo"></h1>
+<div    class="quiz-container"  id="quizcontainer">
+    <div    id="quiz1" >
+        <h1 class="question" id="questionphilo" ></h1>
         <button  class="bouton" >Réponse 1</button>
         <button  class="bouton" >Réponse 2</button>
         <button  class="bouton" >Réponse 3</button>
         <button  class="bouton" >Réponse 4</button>
     </div>
 
-    <div    id="quiz2">
+    <div    id="quiz2" >
         <h1 class="question" id="questionsciences"></h1>
         <button  class="bouton" >Réponse 1</button>
         <button  class="bouton" >Réponse 2</button>
@@ -54,7 +53,7 @@
         <button  class="bouton" >Réponse 4</button>
     </div>
 
-    <div    id="quiz3">
+    <div    id="quiz3" >
         <h1 class="question" id="questionhistoire"></h1>
         <button  class="bouton" >Réponse 1</button>
         <button  class="bouton" >Réponse 2</button>
@@ -63,10 +62,18 @@
     </div>
 </div>
 
-<div class="success" id="successMessage" style="display: none;">bravo</div>
-<div class="feedback" id="feedbackMessage" style="display: none;">nul !</div>
-<div class="imagesuccess" id="imagesuccess" style="display: none;"></div>
-<img    src="Tom-Cruise-laugh-meme-1a55a.jpg" class="tom cruise" style="display: none;" id="tomcruiseimage" >
+<div class="success" id="successMessage" style="display: none;"></div>
+<div class="feedback" id="feedbackMessage" style="display: none;"></div>
+
+        <!-- IMAGE MAUVAISE REPONSE -->
+        <img    src="hysterical-laughter.gif" class="mauvaiseréponsequiz1" style="display: none;" id="mauvaiseréponsequiz1" >
+        <img    src="200w (1).gif" class="mauvaiseréponsequiz2" style="display: none;" id="mauvaiseréponsequiz2" >
+        <img    src="giphy.gif" class="mauvaiseréponsequiz3" style="display: none;" id="mauvaiseréponsequiz3" >
+
+        <!-- IMAGES BONNE REPONSE -->
+        <img    src="Leonardo_Phoenix_Friedrich_Nietzsche_a_19thcentury_German_phil_2.jpg" class="bonneréponsequiz1" style="display: none;" id="bonneréponsequiz1" >
+        <img    src="Leonardo_Phoenix_A_warm_and_cheerful_portrait_of_Albert_Einste_1.jpg" class="bonneréponsequiz2" style="display: none;" id="bonneréponsequiz2" >
+        <img    src="Leonardo_Phoenix_Napolon_Bonaparte_depicted_with_a_warm_and_ch_0.jpg" class="bonneréponsequiz3" style="display: none;" id="bonneréponsequiz3" >
 
 <script src="index.js"  defer></script>
 
