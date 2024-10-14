@@ -208,7 +208,7 @@
 }
 
 #mauvaiseréponsequiz3 {
-    margin-left: 720px;
+    margin-left: 580px;
     margin-top: 40px;
-    width: 500px;
+    width: 800px;
 }
