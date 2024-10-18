@@ -2,7 +2,7 @@
         document.getElementById('imageNietzsche').addEventListener('click', function() {
 
         // Masque les trois sujets de quiz 
-        document.getElementById('imagecontainer').style.display = 'none';
+        document.getElementById('imageContainer').style.display = 'none';
     
         // Fait apparaitre les questions 
         document.getElementById('quiz1').style.display = 'block';
@@ -12,7 +12,7 @@
         document.getElementById('imageEinstein').addEventListener('click', function() {
     
         // Masque les trois sujets de quiz 
-        document.getElementById('imagecontainer').style.display = 'none';
+        document.getElementById('imageContainer').style.display = 'none';
     
         // Fait apparaitre les questions 
         document.getElementById('quiz2').style.display = 'block';
@@ -22,7 +22,7 @@
         document.getElementById('imageNapoleon').addEventListener('click', function() {
     
         // Masque les trois sujets de quiz 
-        document.getElementById('imagecontainer').style.display = 'none';
+        document.getElementById('imageContainer').style.display = 'none';
     
         // Fait apparaitre les questions 
         document.getElementById('quiz3').style.display = 'block';
@@ -31,7 +31,7 @@
         // Fonction pour choisir le quiz
         function choisirQuiz(quizId) {
         // Masquer les trois sujets de quiz 
-        document.getElementById('imagecontainer').style.display = 'none';
+        document.getElementById('imageContainer').style.display = 'none';
                                     
         // Afficher le quiz choisi
         document.getElementById(quizId).style.display = 'block'; 
@@ -226,7 +226,7 @@
     // Fonction pour afficher le quiz choisi
     function afficherQuiz(quizId) {
         // Masquer les trois sujets de quiz 
-        document.getElementById('imagecontainer').style.display = 'none';
+        document.getElementById('imageContainer').style.display = 'none';
     
         // Afficher le quiz choisi
         document.getElementById(quizId).style.display = 'block';
@@ -241,11 +241,11 @@
         // Cibler les éléments spécifiques pour chaque quiz
         let questionElement;
         if (quizId === 'quiz1') {
-            questionElement = document.getElementById('questionphilo');
+            questionElement = document.getElementById('questionPhilo');
         } else if (quizId === 'quiz2') {
-            questionElement = document.getElementById('questionsciences');
+            questionElement = document.getElementById('questionSciences');
         } else if (quizId === 'quiz3') {
-            questionElement = document.getElementById('questionhistoire');
+            questionElement = document.getElementById('questionHistoire');
         }
     
         const buttons = document.querySelectorAll(`#${quizId} .bouton`);
@@ -264,7 +264,7 @@
 
     document.getElementById('bloc1').addEventListener('click', function() {
         // Affiche uniquement le conteneur des images, mais pas le quiz
-        const imageContainer = document.getElementById('imagecontainer');
+        const imageContainer = document.getElementById('imageContainer');
         imageContainer.style.display = 'flex';  // S'assurer que le conteneur reste en mode flex
         imageContainer.style.flexDirection = 'row';  // Alignement horizontal (par défaut)
     });    
@@ -311,7 +311,7 @@
                 } else {
                     // Si le quiz est terminé
                     
-                    document.getElementById('imagecontainer').style.display = 'block'; // Affiche l'écran d'accueil
+                    document.getElementById('imageContainer').style.display = 'block'; // Affiche l'écran d'accueil
                     currentQuestionIndex = 0; // Réinitialiser pour le prochain quiz
                 }
             }, 1500); // Délai de 1 seconde 50 avant de passer à la suite 
@@ -348,10 +348,10 @@
                     document.getElementById(quizId).style.display = 'block'; // Réaffiche le quiz pour la question suivante
                 } else {
                     // Si le quiz est terminé
-                    const imageContainer = document.getElementById('imagecontainer');
+                    const imageContainer = document.getElementById('imageContainer');
                     imageContainer.style.display = 'flex';  // S'assurer que le conteneur reste en mode flex
                     imageContainer.style.flexDirection = 'row';  // Alignement horizontal (par défaut)
-                    document.getElementById('imagecontainer').style.display = 'block';
+                    document.getElementById('imageContainer').style.display = 'block';
                 }
             }, 1500); // Délai de 2 secondes avant de passer à la suite
         }
