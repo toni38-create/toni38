@@ -16,6 +16,7 @@
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); /* Ombre */
 }
 
+/* Ici ça marche mais tu peux mettre cursor: pointer dans le .bloc au dessus. Ca s'appliquera tout le temps. */
 .bloc:hover {
     cursor: pointer;
 }
@@ -30,45 +31,69 @@
 }
 
 .image-container {
-    display: flex;               /* Utiliser Flexbox pour aligner les enfants horizontalement */
+    display: flex; /* Utiliser Flexbox pour aligner les enfants horizontalement */
     justify-content: space-around; /* Distribue l'espace entre les éléments */
-    align-items: flex-start;         /* Aligne les éléments verticalement au centre */
-    padding: 20px;              /* Ajoute un peu d'espace autour des images */
-    overflow: hidden;           /* Cache tout débordement */
+    align-items: flex-start; /* Aligne les éléments verticalement au centre */
+    padding: 20px; /* Ajoute un peu d'espace autour des images */
+    overflow: hidden; /* Cache tout débordement */
 }
 
 .image-item {
-    flex: 1;                    /* Chaque image prend une part égale de l'espace disponible */
-    margin: 0 10px;            /* Marge entre les images */
-    text-align: center;         /* Centrer le texte des légendes sous les images */
+    flex: 1; /* Chaque image prend une part égale de l'espace disponible */
+    margin: 0 10px; /* Marge entre les images */
+    text-align: center; /* Centrer le texte des légendes sous les images */
 }
 
-.image-Nietzsche {
+/*
+les classes sont à utiliser quand tu veux appliquer un même style à plusieurs éléments
+typiquement la taille des images, ont veut la même pour les 3 images donc on peut créer une classe qu'on va appeler pour les 3
+*/
+
+.image-format {
     width: 500px; /* Largeur de l'image */
     height: auto; /* Conserve le rapport d'aspect */
     cursor: pointer;
     margin-top: 20px;
-
 }
 
-.image-Nietzsche:hover {
+.image-format:hover {
     transform: scale(0.9); /* Augmente la taille de l'image de 10% lors du survol */
     cursor: pointer; /* Change le curseur en mode pouce */
     transition: transform 0.3s ease; /* Transition douce pour le changement de taille */
 }
 
+
+/* la classe .image-format permet de factoriser le css de .image-Nietzsche, .image-Einstein et .image-Napoleon
+    idem pour le hover.
+    Il faut essayer d'éviter les duplications de code quand c'est possible.
+
+.image-Nietzsche {
+    width: 500px;
+    height: auto;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.image-Nietzsche:hover {
+    transform: scale(0.9);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
 .image-Einstein {
-        width: 500px; /* Largeur de l'image */
-        height: auto; /* Conserve le rapport d'aspect */
+        width: 500px;
+        height: auto;
         cursor: pointer;
         margin-top: 20px;
 }
 
+
 .image-Einstein:hover {
-    transform: scale(0.9); /* Augmente la taille de l'image de 10% lors du survol */
-    cursor: pointer; /* Change le curseur en mode pouce */
-    transition: transform 0.3s ease; /* Transition douce pour le changement de taille */
+    transform: scale(0.9);
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
+*/
 
 .legende-container {
     display: flex; /* Utilise Flexbox pour disposer les images horizontalement */
@@ -77,40 +102,50 @@
     width: 100%; /* Prend toute la largeur disponible */
     margin: 0.5px auto; /* Centrer le conteneur avec un espacement vertical */
 }
-
-.legendephilo {
+/** Ici pareil tu peux factoriser **/
+.legende {
+    font-family: Montserrat, serif; /* ajout du nom générique*/
+    font-size: 3rem;
+    color: white;
+    margin-top: 20px;
+}
+/*
+.legende-philo {
     font-family: Montserrat;
     font-size: 3rem;
     color: white;
     margin-top: 20px;
 }
 
-.legendesciences {
+.legende-sciences {
     font-family: Montserrat;
     font-size: 3rem;
     color: white;
     margin-top: 20px;
 }
 
-.legendehistoire {
+.legende-histoire {
     font-family: Montserrat;
     font-size: 3rem;
     color: white;
     margin-top: 20px;
 }
-
+*/
+/*
 .image-Napoleon {
-    width: 500px; /* Largeur de l'image */
-    height: auto; /* Conserve le rapport d'aspect */
+    width: 500px;
+    height: auto;
     cursor: pointer;
     margin-top: 20px;
 }
 
+
 .image-Napoleon:hover {
-    transform: scale(0.9); /* Augmente la taille de l'image de 10% lors du survol */
-    cursor: pointer; /* Change le curseur en mode pouce */
-    transition: transform 0.3s ease; /* Transition douce pour le changement de taille */
+    transform: scale(0.9);
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
+*/
 
 #quiz1 {
     display: none; /* Masquer le quiz par défaut */
@@ -131,13 +166,13 @@
     background-color: rgb(77, 187, 77);
     font-size: 1.5rem; /* Taille du texte */
     padding: 15px 80px; /* Espacement interne du bouton */
-    font-family: Montserrat; 
+    font-family: Montserrat, serif;
     border-radius: 12px; /* Coins arrondis */
     cursor: pointer;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); /* Ombre autour du bouton */
     flex: 0 1 calc(50% - 20px); /* Chaque bouton prend 50% de la largeur, moins l'espace */
     margin-top: 200px;
-}   
+}
 
 .bouton:hover {
     background-color: #f87e7e; /* Couleur au survol (plus foncée) */
@@ -146,7 +181,7 @@
 
 .question {
     margin-top: 200px;
-    font-family: montserrat;
+    font-family: montserrat, serif;
     color: white;
     text-align: center; /* Centre le texte */
 }
@@ -161,54 +196,21 @@
 #successMessage {
     color: rgb(255, 255, 255);
     font-size: 2rem;
-    font-family: Montserrat;
+    font-family: Montserrat, serif;
     margin-top: 200px;
 }
 
 #feedbackMessage {
     color: rgb(255, 255, 255);
     font-size: 2rem;
-    font-family: Montserrat;
+    font-family: Montserrat, serif;
     margin-top: 200px;
 }
 
-#mauvaiseréponse {
-    margin-left: 660px;
-    margin-top: 40px;
-    width: 600px;
-}
-
-#bonneréponsequiz1 {
-    margin-left: 720px;
-    margin-top: 40px;
+/* ici aussi on factorise avec une classe plutôt que plusieurs ids */
+/* */
+.answer {
+    display: block;
+    margin: 40px auto;
     width: 500px;
-}
-
-#bonneréponsequiz2 {
-    margin-left: 700px;
-    margin-top: 40px;
-    width: 500px;
-}
-#bonneréponsequiz3 {
-    margin-left: 720px;
-    margin-top: 40px;
-    width: 500px;
-}
-
-#mauvaiseréponsequiz1 {
-    margin-left: 720px;
-    margin-top: 40px;
-    width: 500px;
-}
-
-#mauvaiseréponsequiz2 {
-    margin-left: 720px;
-    margin-top: 40px;
-    width: 500px;
-}
-
-#mauvaiseréponsequiz3 {
-    margin-left: 580px;
-    margin-top: 40px;
-    width: 800px;
 }
